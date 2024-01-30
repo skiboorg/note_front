@@ -76,7 +76,8 @@
         </div>
         <p v-if="not_found" class="text-32 text-negative text-center">Not Found</p>
       </div>
-      <div v-if="tab==='create'">
+      <div v-if="tab==='create'" class="relative-position">
+
         <div class="row q-col-gutter-lg q-mb-lg items-center ">
           <div class="col-12 col-md-2">  <p class="no-margin text-grey-8">Your number</p></div>
           <div class="col-12 col-md-10">  <p class="no-margin text-white text-32">333-{{cur_code}}-D3AD</p></div>
@@ -98,6 +99,7 @@
           </label>
           <q-btn @click="save" no-caps unelevated color="negative" text-color="dark" class="no-border-radius btn fbnt" label="post d3adscroll"/>
         </div>
+        <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
       </div>
 
 
@@ -121,8 +123,8 @@
         </div>
         <p class="text-64 text-center">t0 b3 c0nt1nu3d...</p>
         <div class="text-center mb-100">
-          <a href="#" target="_blank" class="q-mr-md"><img src="~assets/t.png" alt=""></a>
-          <a href="#" target="_blank"><img src="~assets/d.png" alt=""></a>
+          <a href="https://twitter.com/btckeepers" target="_blank" class="q-mr-md"><img src="~assets/x.png" alt=""></a>
+
         </div>
         <div class="text-center">
           <p class="text-28">BITCOINKEEPERS ©2024 | All d3ads reserved.</p>
@@ -143,6 +145,7 @@ const tab = ref('find')
 const cur_code = ref(null)
 const leftDrawerOpen = ref(false)
 const not_found = ref(false)
+const loading = ref(false)
 const note = ref({})
 
 
@@ -185,6 +188,7 @@ const getNote = async () => {
 const save = async () => {
   if (!text.value)
     return
+  loading.value=true
   let formData = new FormData()
   formData.append('uid',cur_code.value)
   formData.append('text',text.value)
@@ -197,9 +201,8 @@ const save = async () => {
     data: formData,
     headers: { "Content-Type": "multipart/form-data" },
   })
-  makeid()
-  images.value = []
-  text.value = null
+
+  window.location.href = '/'
 }
 
 
