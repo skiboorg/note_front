@@ -1,4 +1,5 @@
 const BASE_URL = 'https://bitcoinkeepers.wtf'
+//const BASE_URL = 'http://localhost:8000'
 const { configure } = require('quasar/wrappers');
 
 module.exports = configure(function (ctx) {

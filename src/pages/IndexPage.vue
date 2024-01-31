@@ -17,7 +17,7 @@
 
         </q-drawer>
 
-    <div class="top mb-200">
+    <div class="top mb-100">
     <div class="container">
       <div class="header flex items-center justify-between mb-100">
         <div class="logo">
@@ -36,11 +36,10 @@
 
       <div class="col-12 col-md-6 ">
         <p class="text-64">NO Ut1l1ty.</p>
-        <p class="text-28">The Keepers were born in the flames of a dying blockchain when it seemed that all hope was lost, when the last block had been processed and the last ASIC had been shut down.<br><br>
-          Keepers exist against all logic and beyond any laws; their primary purpose became the fact of their own existence.</p>
+        <p class="text-28">The Keepers are not just a set of numbers and pixels. We set ourselves the task of building a large, strong community, each of whose members soberly assesses the market and its prospects, understands the concept of its structure, and contributes to its development. The basis we want to lay in the foundation of such a community is absolute openness in our plans and actions, it is trust. It all starts from there.</p>
       </div>
       <div class="col-12 col-md-5 offset-0 offset-md-1 ">
-        <q-img src="~assets/topimg.png" alt=""/>
+        <q-img src="~assets/yellow/main-1.png" alt=""/>
       </div>
     </div>
 
@@ -51,7 +50,7 @@
         <p class="text-64 text-white">t0 h1d3 c0nv3rsat10ns fr0m sly d3vs</p>
       </div>
       <div class="col-12 col-md-5 offset-0 offset-md-1">
-        <q-img src="~assets/img1.png" alt=""/>
+        <q-img src="~assets/yellow/main-2.png" alt=""/>
       </div>
     </div>
     <div class="container bg-black mb-200 form">
@@ -59,14 +58,20 @@
         <p class="no-margin text-32 cursor-pointer" @click="tab='find'" :class="tab === 'find' ? 'text-white' : 'text-negative'">enter d3adscroll</p>
         <p class="no-margin text-32 cursor-pointer" @click="makeid(), tab='create'" :class="tab === 'create' ? 'text-white' : 'text-negative'">Cr3ate d3adscroll</p>
       </div>
-      <div v-if="tab==='find'">
+      <div v-if="tab==='find'" class="relative-position">
         <div class="row q-col-gutter-md q-mb-lg">
           <div class="col-12 col-md-9">
-            <q-input dark  bg-color="dark" square label-color="grey-8" standout="dark text-white" class="full-width  no-border-radius" color="text-white" v-model="code" label="h3r3... but shhhhhhhhhhh"/>
+            <q-input dark  bg-color="dark" square label-color="grey-8" standout="dark text-white" class="full-width  no-border-radius" color="text-white" v-model="code" label="333-.....-...."/>
           </div>
           <div class="col-12 col-md-3"><p class="no-margin btn-s" @click="getNote">s3arch</p></div>
         </div>
    <p v-if="note.text" class="bg-dark q-pa-lg text-white text-32">{{note.text}}</p>
+        <div v-if="note.is_wl" class="q-mb-md ">
+
+          <q-input dark  bg-color="dark" square label-color="grey-8" standout="dark text-white" class="full-width q-mb-md  no-border-radius" color="text-white" v-model="wallet" label="Wall3t"/>
+          <q-input dark  bg-color="dark" square label-color="grey-8" standout="dark text-white" class="full-width q-mb-md no-border-radius" color="text-white" v-model="twitter" label="Twitt3r"/>
+          <q-btn @click="update" no-caps unelevated color="negative" text-color="dark" class="no-border-radius btn fbnt" label="s3nd"/>
+        </div>
         <div v-if="note.images?.length>0" class="row q-col-gutter-md q-mb-lg">
           <div class="col-6 col-md-3" v-for="(img,index) in note.images">
             <div class="img relative-position">
@@ -75,11 +80,14 @@
           </div>
         </div>
         <p v-if="not_found" class="text-32 text-negative text-center">Not Found</p>
+        <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
       </div>
       <div v-if="tab==='create'" class="relative-position">
-
+        <p class="text-white text-h5">Here you can create you deadscroll! It cannot be changed, and after reading they burn out and cannot be opened again. Send the code below to open the note.</p>
         <div class="row q-col-gutter-lg q-mb-lg items-center ">
-          <div class="col-12 col-md-2">  <p class="no-margin text-grey-8">Your number</p></div>
+          <div class="col-12 col-md-2">
+            <p class="no-margin text-grey-8">Your number</p>
+          </div>
           <div class="col-12 col-md-10">  <p class="no-margin text-white text-32">333-{{cur_code}}-D3AD</p></div>
 
         </div>
@@ -101,30 +109,27 @@
         </div>
         <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
       </div>
-
-
     </div>
     <div class="bottom">
       <div class="container">
         <p class="text-64 mb-100">D3ADMAP</p>
         <div class="row q-col-gutter-md mb-200">
           <div class="col-12 col-md-3">
-            <q-img src="~assets/1.png"/>
+            <q-img src="~assets/yellow/1.png"/>
           </div>
           <div class="col-12 col-md-3">
-            <q-img src="~assets/2.png"/>
+            <q-img src="~assets/yellow/2.png"/>
           </div>
           <div class="col-12 col-md-3">
-            <q-img src="~assets/3.png"/>
+            <q-img src="~assets/yellow/3.png"/>
           </div>
           <div class="col-12 col-md-3">
-            <q-img src="~assets/4.png"/>
+            <q-img src="~assets/yellow/4.png"/>
           </div>
         </div>
         <p class="text-64 text-center">t0 b3 c0nt1nu3d...</p>
         <div class="text-center mb-100">
           <a href="https://twitter.com/btckeepers" target="_blank" class="q-mr-md"><img src="~assets/x.png" alt=""></a>
-
         </div>
         <div class="text-center">
           <p class="text-28">BITCOINKEEPERS ©2024 | All d3ads reserved.</p>
@@ -140,15 +145,16 @@ import {api} from "boot/axios";
 
 const code = ref(null)
 const text = ref(null)
+const wallet = ref('')
+const twitter = ref('')
 const images = ref([])
 const tab = ref('find')
 const cur_code = ref(null)
 const leftDrawerOpen = ref(false)
 const not_found = ref(false)
+
 const loading = ref(false)
 const note = ref({})
-
-
 
 function makeid() {
   let result = '';
@@ -174,7 +180,7 @@ const getNote = async () => {
     return
   note.value = {}
   not_found.value = false
-  const resp = await api(`/data/note/${code.value.split('-')[1]}`)
+  const resp = await api(`/data/note/${code.value}`)
   console.log(resp.data)
   if (resp.data.uid){
     note.value = resp.data
@@ -182,16 +188,23 @@ const getNote = async () => {
   else {
     not_found.value = true
   }
-  code.value = null
+
 }
 
+const update = async () => {
+  loading.value= true
+  await api.post('/data/update',{uid:note.value.uid,wallet:wallet.value,twitter:twitter.value})
+  window.location.href = '/'
+
+}
 const save = async () => {
   if (!text.value)
     return
   loading.value=true
   let formData = new FormData()
-  formData.append('uid',cur_code.value)
+  formData.append('uid',`333-${cur_code.value}-D3AD`)
   formData.append('text',text.value)
+
   for (let i of images.value){
     formData.append('files',i.file)
   }
@@ -201,7 +214,6 @@ const save = async () => {
     data: formData,
     headers: { "Content-Type": "multipart/form-data" },
   })
-
   window.location.href = '/'
 }
 
