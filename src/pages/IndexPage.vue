@@ -21,7 +21,7 @@
     <div class="container">
       <div class="header flex items-center justify-between mb-100">
         <div class="logo">
-          <img src="~assets/logo.png" alt="">
+          <img src="~assets/yellow/logo.png" alt="">
           <p class="no-margin">
             bitcoin<br>keepers
           </p>
