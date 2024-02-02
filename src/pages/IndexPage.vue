@@ -36,13 +36,13 @@
 
       <div class="col-12 col-md-7 ">
         <p class="text-64 text-white">k33p3rs 3ncrypt0r</p>
-        <p class="text-24 text-bitmgothic text-white">3ns3rt a k3y t0 3volv3...</p>
+        <p class="text-24 text-bitmgothic text-white">insert a coin to evolve</p>
         <p class="text-28 text-negative text-bitmgothic">
           The Keepers are not just a set of numbers and pixels.
           We set ourselves the task of building a large,strong community, each of whose members soberly assesses the market and its prospects, understands the concept of web3 structure and contributes to its development.<br>
           The basis we want to lay in the foundation of such a community is absolute openness in our plans and actions. We don't make lofty promises and don't make people wait for things we can't or don't want to do;
-          we simply take action and demonstrate it.
-          It all starts from trust.
+          we simply take action and demonstrate it.<br>
+          All the biggest things start from trust.
         </p>
       </div>
       <div class="col-12 col-md-5 ">
@@ -54,7 +54,7 @@
     <div class="  pp">
       <div class="container row q-col-gutter-md items-center">
         <div class="col-12 col-md-6 ">
-          <p class="text-64 text-bitmgothic text-white">k33p3rs 3ncrypt0r</p>
+          <p class="text-64 text-white">k33p3rs 3ncrypt0r</p>
           <p class="text-24 text-bitmgothic text-white">d3adscr0lls.</p>
           <p class="text-28 text-bitmgothic text-negative">
             Keepers enter the blocktrans, where they connect with the blockchain and leave runes on it. Runes can be decrypted and recorded in scrolls, using a language that is understandable and familiar to everyone.<br><br>
@@ -120,7 +120,10 @@
         <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
       </div>
       <div v-if="tab==='create'" class="relative-position">
-        <p class="text-white text-h5">Here you can create you deadscroll! It cannot be changed, and after reading they burn out and cannot be opened again. Send the code below to open the note.</p>
+        <p class="text-white text-h5">
+          Here you can wrap a d3adscroll. After reading, they burn out and can't be opened again.
+          Send the code below to unwrap the d3adscroll
+        </p>
         <div class="row q-col-gutter-lg q-mb-lg items-center ">
           <div class="col-12 col-md-2">
             <p class="no-margin text-grey-8">Your number</p>
