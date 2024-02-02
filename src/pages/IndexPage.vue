@@ -194,6 +194,10 @@ const not_found = ref(false)
 const loading = ref(false)
 const note = ref({})
 
+
+onBeforeMount(()=>{
+  makeid()
+})
 function makeid() {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
