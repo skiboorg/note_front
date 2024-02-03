@@ -35,7 +35,7 @@
     <div class="container row q-col-gutter-md items-center">
 
       <div class="col-12 col-md-7 ">
-        <p class="text-64 text-white">k33p3rs 3ncrypt0r</p>
+        <p class="text-64 text-white">No utility?</p>
         <p class="text-24 text-bitmgothic text-white">insert a coin to evolve</p>
         <p class="text-28 text-negative text-bitmgothic">
           The Keepers are not just a set of numbers and pixels.
