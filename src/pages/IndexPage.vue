@@ -142,10 +142,10 @@
           </div>
         </div>
         <div class="flex items-center justify-between">
-          <label for="i"  class="no-border-radius btn text-24 text-dark text-sonic bg-negative cursor-pointer fbnt" >+add image
+          <label for="i"  class="no-border-radius btn text-24 text-dark text-sonic bg-negative cursor-pointer fbnt" >add jpeg
             <input id="i" accept="*/image" style="display: none" type="file" @change="addImage($event)">
           </label>
-          <p class="no-margin btn-s inline-block fbnt" @click="save">post d3adscroll</p>
+          <p class="no-margin btn-s inline-block fbnt" @click="save">wrap d3adscroll</p>
 
         </div>
         <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
