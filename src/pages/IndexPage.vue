@@ -196,11 +196,8 @@ const not_found = ref(false)
 
 const loading = ref(false)
 const note = ref({})
-import { getRequestToken, getAccessToken } from 'components/test';
-import hello from 'hellojs'
-hello.init({
-  twitter: 'dR3rYKdjsKpknVFgWy9DwdM7ngN6B5hucZ7BzebUq3nB8'
-})
+import { useAuth0 } from '@auth0/auth0-vue';
+const { loginWithRedirect } = useAuth0();
 
 //1755966712363589632-LMUVkoF07VaJXlT7ptUfDcfMVje1QK
 //dR3rYKdjsKpknVFgWy9DwdM7ngN6B5hucZ7BzebUq3nB8
@@ -211,14 +208,9 @@ hello.init({
 onBeforeMount(()=>{
   makeid()
 })
+
 const test = async () => {
-  try {
-    const { oauth_token, oauth_token_secret } = await getRequestToken();
-    // Redirect the user to Twitter for authorization
-    window.location.href = `https://api.twitter.com/oauth/authenticate?oauth_token=${oauth_token}`;
-  } catch (error) {
-    console.error('Error getting request token:', error);
-  }
+  loginWithRedirect();
 }
 
 function makeid() {
