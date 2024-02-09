@@ -27,7 +27,7 @@
           </p>
         </div>
         <p class="no-margin text-32 gt-sm text-negative">3 33  333</p>
-        <q-btn no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" label="Connect wallet"/>
+        <q-btn @click="test" no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" label="Connect wallet"/>
         <q-btn icon="menu" @click="leftDrawerOpen=true" flat round text-color="dark" class="lt-md"/>
       </div>
     </div>
@@ -196,11 +196,31 @@ const not_found = ref(false)
 
 const loading = ref(false)
 const note = ref({})
+import { getRequestToken, getAccessToken } from 'components/test';
+import hello from 'hellojs'
+hello.init({
+  twitter: 'dR3rYKdjsKpknVFgWy9DwdM7ngN6B5hucZ7BzebUq3nB8'
+})
+
+//1755966712363589632-LMUVkoF07VaJXlT7ptUfDcfMVje1QK
+//dR3rYKdjsKpknVFgWy9DwdM7ngN6B5hucZ7BzebUq3nB8
 
 
+//ZAdvMwKZnUY6rCzaAYv4hxZmn
+//sec oNEopJzsi5oX2GLVaqOYQkyu0OgmugOgFE6CAjsQMK564YBcRE
 onBeforeMount(()=>{
   makeid()
 })
+const test = async () => {
+  try {
+    const { oauth_token, oauth_token_secret } = await getRequestToken();
+    // Redirect the user to Twitter for authorization
+    window.location.href = `https://api.twitter.com/oauth/authenticate?oauth_token=${oauth_token}`;
+  } catch (error) {
+    console.error('Error getting request token:', error);
+  }
+}
+
 function makeid() {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
