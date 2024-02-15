@@ -1,36 +1,9 @@
 <template>
   <q-page >
-        <q-drawer
-          v-model="leftDrawerOpen"
 
-          side="right"
-          dark
-        >
-          <div class="q-pa-lg text-right mb-200">
-            <q-btn icon="close" @click="leftDrawerOpen=false" flat round text-color="white" />
-          </div>
-          <div class="flex column items-center justify-center">
-            <p class="text-32 text-white text-center">3</p>
-            <p class="text-32 text-white text-center">33</p>
-            <p class="text-32 text-white text-center">3333</p>
-          </div>
-
-        </q-drawer>
 
     <div class="top ">
-    <div class="container">
-      <div class="header flex items-center justify-between mb-100">
-        <div class="logo">
-          <img src="~assets/yellow/logo.png" alt="">
-          <p class="no-margin text-negative text-28">
-            bitcoin<br>keepers
-          </p>
-        </div>
-        <p class="no-margin text-32 gt-sm text-negative">3 33  333</p>
-        <q-btn @click="test" no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" label="Connect wallet"/>
-        <q-btn icon="menu" @click="leftDrawerOpen=true" flat round text-color="dark" class="lt-md"/>
-      </div>
-    </div>
+
 
     <div class="container row q-col-gutter-md items-center">
 
@@ -191,20 +164,12 @@ const twitter = ref('')
 const images = ref([])
 const tab = ref('find')
 const cur_code = ref(null)
-const leftDrawerOpen = ref(false)
+
 const not_found = ref(false)
 
 const loading = ref(false)
 const note = ref({})
-import { useAuth0 } from '@auth0/auth0-vue';
-const { loginWithRedirect } = useAuth0();
 
-//1755966712363589632-LMUVkoF07VaJXlT7ptUfDcfMVje1QK
-//dR3rYKdjsKpknVFgWy9DwdM7ngN6B5hucZ7BzebUq3nB8
-
-
-//ZAdvMwKZnUY6rCzaAYv4hxZmn
-//sec oNEopJzsi5oX2GLVaqOYQkyu0OgmugOgFE6CAjsQMK564YBcRE
 onBeforeMount(()=>{
   makeid()
 })
