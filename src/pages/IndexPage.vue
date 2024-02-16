@@ -75,7 +75,7 @@
    <p v-if="note.text" class="bg-dark q-pa-lg text-white text-32">{{note.text}}</p>
         <div v-if="note.is_wl" class="q-mb-md ">
 
-          <q-input dark  bg-color="dark" square outlined label-color="grey-8" standout="dark text-white" class="full-width q-mb-md
+          <q-input dark v-if="!note.only_twitter"  bg-color="dark" square outlined label-color="grey-8" standout="dark text-white" class="full-width q-mb-md
            no-border-radius" color="text-white" v-model="wallet" label="bc1p8wdwtynk4hul2rlqgwy9lpwel94fc4684mj83lrltkf26cakr3sqh05sxw"/>
           <q-input dark  bg-color="dark" square outlined label-color="grey-8" standout="dark text-white" class="full-width q-mb-md no-border-radius"
                    color="text-white" v-model="twitter" label="x.com/btckeepers"/>
