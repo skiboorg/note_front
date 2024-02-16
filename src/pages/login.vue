@@ -27,7 +27,7 @@
             <p class="text-white">password</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password" placeholder="..."/>
-<!--            <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="loginAction" label="login"/>-->
+            <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="loginAction" label="login"/>
           </div>
           <div v-if="tab==='reg'" class="">
             <p class="text-white">Email</p>
@@ -40,7 +40,7 @@
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="..."/>
 
-<!--            <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="register" label="REGISTRATION"/>-->
+            <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="register" label="REGISTRATION"/>
           </div>
         </div>
       </div>
