@@ -38,7 +38,7 @@
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password" placeholder="..."/>
             <p class="text-white">registration code</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
-                     class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="..."/>
+                     class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="333-..."/>
 
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="register" label="REGISTRATION"/>
           </div>
@@ -108,10 +108,6 @@ const register = () => {
     }
   })
     loading.value = !loading.value;
-}
-
-const x = () => {
-
 }
 
 </script>
