@@ -5,25 +5,25 @@
     <div class="top ">
 
 
-    <div class="container row q-col-gutter-md items-center">
+      <div class="container row q-col-gutter-md items-center">
 
-      <div class="col-12 col-md-7 ">
-        <p class="text-64 text-white">No utility?</p>
-        <p class="text-24 text-bitmgothic text-white">insert a coin to evolve</p>
-        <p class="text-28 text-negative text-bitmgothic">
-          The Keepers are not just a set of numbers and pixels.
-          We set ourselves the task of building a large,strong community, each of whose members soberly assesses the market and its prospects, understands the concept of web3 structure and contributes to its development.<br>
-          The basis we want to lay in the foundation of such a community is absolute openness in our plans and actions. We don't make lofty promises and don't make people wait for things we can't or don't want to do;
-          we simply take action and demonstrate it.<br>
-          All the biggest things start from trust.
-        </p>
+        <div class="col-12 col-md-7 ">
+          <p class="text-64 text-white">No utility?</p>
+          <p class="text-24 text-bitmgothic text-white">insert a coin to evolve</p>
+          <p class="text-28 text-negative text-bitmgothic">
+            The Keepers are not just a set of numbers and pixels.
+            We set ourselves the task of building a large,strong community, each of whose members soberly assesses the market and its prospects, understands the concept of web3 structure and contributes to its development.<br>
+            The basis we want to lay in the foundation of such a community is absolute openness in our plans and actions. We don't make lofty promises and don't make people wait for things we can't or don't want to do;
+            we simply take action and demonstrate it.<br>
+            All the biggest things start from trust.
+          </p>
+        </div>
+        <div class="col-12 col-md-5 ">
+          <q-img src="~assets/yellow/main-1.png" alt=""/>
+        </div>
       </div>
-      <div class="col-12 col-md-5 ">
-        <q-img src="~assets/yellow/main-1.png" alt=""/>
-      </div>
+
     </div>
-
-  </div>
     <div class="  pp">
       <div class="container row q-col-gutter-md items-center">
         <div class="col-12 col-md-6 ">
@@ -72,7 +72,7 @@
           </div>
           <div class="col-12 col-md-3"><p class="no-margin btn-s" @click="getNote">unwrap</p></div>
         </div>
-   <p v-if="note.text" class="bg-dark q-pa-lg text-white text-32">{{note.text}}</p>
+        <p v-if="note.text" class="bg-dark q-pa-lg text-white text-32">{{note.text}}</p>
         <div v-if="note.is_wl" class="q-mb-md ">
 
           <q-input dark v-if="!note.only_twitter"  bg-color="dark" square outlined label-color="grey-8" standout="dark text-white" class="full-width q-mb-md
@@ -104,7 +104,8 @@
           <div class="col-12 col-md-10">  <p class="no-margin text-white text-32">333-{{cur_code}}-D3AD</p></div>
 
         </div>
-        <q-input  dark  bg-color="dark" type="textarea" outlined square label-color="grey-8" standout="dark text-white" class="q-mb-lg full-width  no-border-radius" color="text-white" v-model="text" label="h3r3... but shhhhhhhhhhh"/>
+        <q-input  dark  bg-color="dark" type="textarea" outlined square label-color="grey-8" standout="dark text-white"
+                  class="q-mb-lg full-width  no-border-radius" color="text-white" v-model="text" label="h3r3... but shhhhhhhhhhh"/>
 
         <div class="row q-col-gutter-md q-mb-lg">
           <div class="col-6 col-md-3" v-for="(img,index) in images">
@@ -123,6 +124,8 @@
         </div>
         <q-inner-loading :showing="loading" dark> <q-spinner size="50px" color="red" /></q-inner-loading>
       </div>
+
+      <p v-if="result_text" class="no-margin text-green text-h6 text-center">{{result_text}}</p>
     </div>
     <div class="bottom">
       <div class="container">
@@ -164,6 +167,7 @@ const twitter = ref('')
 const images = ref([])
 const tab = ref('find')
 const cur_code = ref(null)
+const result_text = ref(null)
 
 const not_found = ref(false)
 
@@ -198,6 +202,7 @@ const delImage = (i) => {
 }
 
 const getNote = async () => {
+  result_text.value = ''
   if (!code.value)
     return
   note.value = {}
@@ -214,15 +219,18 @@ const getNote = async () => {
 }
 
 const update = async () => {
-  loading.value= true
+  result_text.value = ''
+  loading.value= !loading.value
   await api.post('/data/update',{uid:note.value.uid,wallet:wallet.value,twitter:twitter.value})
-  window.location.href = '/'
+  result_text.value = 'updated !'
+  loading.value= !loading.value
 
 }
 const save = async () => {
+  result_text.value = ''
   if (!text.value)
     return
-  loading.value=true
+  loading.value= !loading.value
   let formData = new FormData()
   formData.append('uid',`333-${cur_code.value}-D3AD`)
   formData.append('text',text.value)
@@ -236,7 +244,12 @@ const save = async () => {
     data: formData,
     headers: { "Content-Type": "multipart/form-data" },
   })
-  window.location.href = '/'
+  makeid()
+  result_text.value = 'wrapped !'
+  tab.value = 'find'
+  text.value = ''
+  loading.value= !loading.value
+
 }
 
 

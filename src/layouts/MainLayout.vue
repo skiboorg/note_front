@@ -15,7 +15,7 @@
             </div>
             <p class="no-margin text-32 gt-sm text-negative">3 33  333</p>
 <!--            -->
-            <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Connect wallet"/>
+            <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Login - REGISTRATION"/>
             <q-btn  icon="menu" @click="leftDrawerOpen=true" flat round text-color="negative" class="lt-md"/>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <p class="text-32 text-white text-center">33</p>
           <p class="text-32 text-white text-center">3333</p>
 <!--          @click="$router.push('/auth')"-->
-          <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn " @click="$router.push('/login')" label="Connect wallet"/>
+          <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn " @click="$router.push('/login')" label="Login - REGISTRATION"/>
         </div>
 
       </q-drawer>
