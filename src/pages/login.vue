@@ -16,8 +16,8 @@
             :spread="$q.screen.lt.md"
             unelevated
             :options="[
-             {label: 'REGISTRATION', value: 'reg'},
-          {label: 'LOG IN', value: 'login'},
+             {label: 'Sign up', value: 'reg'},
+          {label: 'Sign in', value: 'login'},
         ]"
           />
           <div v-if="tab==='login'" class="">
@@ -36,7 +36,7 @@
             <p class="text-white">password</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password" placeholder="..."/>
-            <p class="text-white">registration code</p>
+            <p class="text-white">registration key</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="333-..."/>
 
