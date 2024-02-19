@@ -27,7 +27,15 @@
             <p class="text-white">password</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password" placeholder="..."/>
+            <p class="text-white cursor-pointer" @click="tab='lost'">Lost password?</p>
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="loginAction" label="login"/>
+          </div>
+          <div v-if="tab==='lost'" class="">
+            <p class="text-white">Email</p>
+            <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
+                     class="full-width q-mb-lg no-border-radius" color="text-white" v-model="email" placeholder="..."/>
+
+            <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="recovery" label="Recovery"/>
           </div>
           <div v-if="tab==='reg'" class="">
             <p class="text-white">Email</p>
@@ -92,6 +100,12 @@ const loginAction = async () => {
   loading.value = !loading.value;
 }
 
+const recovery = async () => {
+  await api.post('/user/recovery',{email:email.value})
+  success_text.value = 'a new password will be sent by email'
+  email.value = null
+  tab.value = 'login'
+}
 const register = () => {
   loading.value = !loading.value;
   error_text.value=''
@@ -101,7 +115,7 @@ const register = () => {
     code:code.value,
   }).then((response)=>{
     console.log(response)
-    success_text.value = 'Success'
+
   }).catch((error)=>{
     for (let err in error.response.data){
       error_text.value += error.response.data[err] + ' '
