@@ -13,7 +13,10 @@
                 bitcoin<br>keepers
               </p>
             </div>
-            <p class="no-margin text-32 gt-sm text-negative">3 33  333</p>
+            <p class="no-margin text-32 gt-sm text-menu">3</p>
+            <p class="no-margin text-32 gt-sm text-menu">33</p>
+            <p class="no-margin text-32 gt-sm text-menu">RAFFLES</p>
+            <p class="no-margin text-32 gt-sm text-menu">3333</p>
 <!--            -->
             <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Sign in/Sign up"/>
             <q-btn  icon="menu" @click="leftDrawerOpen=true" flat round text-color="negative" class="lt-md"/>
