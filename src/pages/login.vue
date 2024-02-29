@@ -31,10 +31,12 @@
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="loginAction" label="login"/>
           </div>
           <div v-if="tab==='lost'" class="">
+
             <p class="text-white">Email</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="email" placeholder="..."/>
 
+            <p class="text-white">We will send an email with a new password to the email you specified, only if this email (account) has been registered</p>
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="recovery" label="Recovery"/>
           </div>
           <div v-if="tab==='reg'" class="">
