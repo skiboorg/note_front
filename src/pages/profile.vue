@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-12 col-md-6">
      <p class="text-white text-32"> MY Profile</p>
+     <p class="text-white text-32 text-green-5">Used code: {{authStore.user.code}}</p>
 
             <p class="text-white">my email</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
