@@ -1,10 +1,16 @@
 <template>
   <q-page >
 
+    <div class="q-pa-xl bg-negative q-mt-xl">
+      <div class="container flex items-center justify-between">
+        <p class="text-48 no-margin">keeper’s COLLABoration REQUEST</p>
+        <div class="btn-dark" @click="$router.push('/request')">
+          <p class="no-margin text-white text-32">MAKE REQUEST</p>
+        </div>
+      </div>
 
+    </div>
     <div class="top ">
-
-
       <div class="container row q-col-gutter-md items-center">
 
         <div class="col-12 col-md-7 ">
