@@ -26,7 +26,7 @@
 <!--        <div class="col-12 col-md-3"><p class="no-margin btn-s bg-red" @click="getNote">LOG OUT</p></div>-->
       </div>
       <p v-if="authStore.user.is_in_wl" class="text-positive text-32">d3adlisted</p>
-      <p v-else class="text-red-13 text-32">YOU WALLET IS NOT IN WL</p>
+      <p v-else class="text-red-13 text-32">YOUR WALLET IS NOT IN WL.</p>
     </div>
 
   </div>
