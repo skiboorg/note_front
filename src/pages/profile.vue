@@ -23,7 +23,7 @@
       <div class="row q-col-gutter-md q-mb-lg">
         <div class="col-12 col-md-3">  <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="update" label="Save"/> </div>
         <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="check" label="CHeck my wallet in wl"/></div>
-<!--        <div class="col-12 col-md-3"><p class="no-margin btn-s bg-red" @click="getNote">LOG OUT</p></div>-->
+        <div class="col-12 col-md-3"><p class="no-margin btn-s bg-red" @click="authStore.logoutUser">LOG OUT</p></div>
       </div>
       <p v-if="authStore.user.is_in_wl" class="text-positive text-32">d3adlisted</p>
       <p v-else class="text-red-13 text-32">YOUR WALLET IS NOT IN WL.</p>

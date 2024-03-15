@@ -6,6 +6,7 @@ const loading = ref(false)
 const error = ref(false)
 const success = ref(false)
 const file = ref(null)
+const preview_img = ref(null)
 
 
 const formData = reactive({
@@ -42,7 +43,15 @@ const send = async () => {
   loading.value = !loading.value
 }
 
-
+const delImage = () => {
+  file.value = null
+  preview_img.value = null
+}
+const addImage = (e) => {
+  console.log(e.target.files[0])
+  file.value =e.target.files[0]
+  preview_img.value = URL.createObjectURL(e.target.files[0])
+}
 </script>
 
 <template>
@@ -64,9 +73,22 @@ const send = async () => {
           <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                    class="full-width q-mb-lg no-border-radius" color="text-white" v-model="formData.code" placeholder="333-....-daoChanc3"/>
           <p class="text-white">proof that you have a role in organizing collaborations in this Dao</p>
-          <q-btn  class="q-mb-lg relative-position" color="white" text-color="dark" size="20px"  label="CHOOSE PROOF FILE">
-            <q-file style="opacity: 0" class="absolute full-width full-height" v-model="file"/>
-          </q-btn>
+<!--          <q-btn  class="q-mb-lg relative-position" color="white" text-color="dark" size="20px"  label="CHOOSE PROOF FILE">-->
+<!--            <q-file style="opacity: 0" class="absolute full-width full-height" v-model="file"/>-->
+<!--          </q-btn>-->
+
+          <div class="q-mb-lg">
+            <div v-if="preview_img" class="q-mb-lg relative-position">
+              <q-btn class="absolute-top-right z-max" @click="delImage" round dense icon="close" flat text-color="red"/>
+              <q-img :ratio="4/3" fit="contain" :src="preview_img" alt=""/>
+            </div>
+
+
+            <label for="i"  class="no-border-radius btn text-24 text-dark text-sonic bg-white cursor-pointer fbnt" >CHOOSE PROOF FILE
+              <input id="i" accept="*/image" style="display: none" type="file" @change="addImage($event)">
+            </label>
+          </div>
+
           <q-btn  class="q-mb-lg  full-width" :disable="!formData.code" color="negative" text-color="dark" size="20px" :loading="loading" @click="send" label="S3ND REQUEST"/>
           <p v-if="success" class="text-green-14">Your request has been sent successfully</p>
           <p v-if="error" class="text-red-14">This request code was not found. Contact us on Twitter.</p>

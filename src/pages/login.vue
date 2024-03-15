@@ -100,7 +100,7 @@ const loginAction = async () => {
   error_text.value=''
   success_text.value=''
   try {
-    await auth_store.loginUser({ email: email.value, password: password.value });
+    await auth_store.loginUser({ email: email.value.toLowerCase(), password: password.value });
     router.push('/profile')
   } catch (error) {
     error_text.value = error.response.data.non_field_errors[0]
@@ -112,7 +112,7 @@ const recovery = async () => {
   error_text.value=''
   success_text.value=''
   loading.value = !loading.value;
-  const resp = await api.post('/user/recovery',{email:email.value})
+  const resp = await api.post('/user/recovery',{email:email.value.toLowerCase()})
   if (resp.data.success){
     success_text.value = 'a new password will be sent by email. check spam folder!'
   }else {
@@ -129,7 +129,7 @@ const register = () => {
   loading.value = !loading.value;
   error_text.value=''
   api.post('/auth/users/', {
-    email:email.value,
+    email:email.value.toLowerCase(),
     password:password1.value,
     code:code.value,
   }).then((response)=>{

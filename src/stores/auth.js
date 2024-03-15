@@ -14,12 +14,13 @@ export const useAuthStore = defineStore('auth', () => {
     async function logoutUser() {
       await api.post('/auth/token/logout/')
         api.defaults.headers.common['Authorization'] = null
+      user.value={}
         if (!process.env.SERVER) {
           Cookies.remove('auth_token')
           //this.loggedIn = false
           //this.user = {}
         }
-      this.router.push('/login')
+      this.router.push('/')
     }
 
     function  loginUser(data) {

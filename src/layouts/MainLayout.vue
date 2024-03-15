@@ -1,8 +1,5 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-
-
-
     <q-page-container>
       <header class="header-wrapper">
         <div class="container ">
@@ -18,7 +15,9 @@
             <p class="no-margin text-32 gt-sm text-menu">RAFFLES</p>
             <p class="no-margin text-32 gt-sm text-menu">3333</p>
 <!--            -->
-            <q-btn  no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Sign in/Sign up"/>
+
+            <q-btn v-if="!auth.user.email" no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Sign in/Sign up"/>
+            <q-btn v-else no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/profile')" label="Profile"/>
             <q-btn  icon="menu" @click="leftDrawerOpen=true" flat round text-color="negative" class="lt-md"/>
           </div>
         </div>
@@ -55,6 +54,9 @@
 </style>
 <script setup>
 import {ref} from "vue";
+import {useAuthStore} from "stores/auth";
 
 const leftDrawerOpen = ref(false)
+
+const auth = useAuthStore()
 </script>
