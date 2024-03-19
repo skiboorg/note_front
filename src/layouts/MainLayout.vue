@@ -6,9 +6,6 @@
           <div class="header flex items-center justify-between ">
             <div class="logo cursor-pointer" @click="$router.push('/')">
               <img src="~assets/yellow/logo.png" alt="">
-              <p class="no-margin text-negative text-28">
-                bitcoin<br>keepers
-              </p>
             </div>
             <p class="no-margin text-32 gt-sm text-menu">3</p>
             <p class="no-margin text-32 gt-sm text-menu">33</p>

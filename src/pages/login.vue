@@ -31,12 +31,11 @@
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="loginAction" label="login"/>
           </div>
           <div v-if="tab==='lost'" class="">
-
             <p class="text-white">Email</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="email" placeholder="..."/>
 
-            <p class="text-white">We will send an email with a new password to the email you specified, only if this email (account) has been registered</p>
+            <p class="text-white">We will send an email with a new password only if this email (account) has been registered</p>
             <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="recovery" label="Recovery"/>
           </div>
           <div v-if="tab==='reg'" class="">
@@ -46,14 +45,13 @@
             <p class="text-white">password</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password" placeholder="..."/>
-            <p class="text-white">repeat password (remember your password)</p>
+            <p class="text-white">repeat password</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
                      class="full-width q-mb-lg no-border-radius" color="text-white" v-model="password1" placeholder="..."/>
             <p v-if="password !== password1" class="text-red-13">Password mismatch</p>
-            <p class="text-white">registration key</p>
+            <p class="text-white">DAO CODE [REGISTRATION CODE]</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
-                     class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="333-..."/>
-
+                     class="full-width q-mb-lg no-border-radius" color="text-white" v-model="code" placeholder="333-xxx-xxx"/>
             <q-btn v-if="email && password" class="no-margin  full-width" :disable="!(password === password1)" color="negative" text-color="dark" size="20px" :loading="loading" @click="register" label="REGISTRATION"/>
           </div>
         </div>

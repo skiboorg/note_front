@@ -1,15 +1,15 @@
 <template>
   <q-page >
 
-    <div class="q-pa-xl bg-negative q-mt-xl">
-      <div class="container flex items-center justify-between">
-        <p class="text-48 no-margin">keeper’s COLLABoration REQUEST</p>
-        <div class="btn-dark" @click="$router.push('/request')">
-          <p class="no-margin text-white text-32">MAKE REQUEST</p>
-        </div>
-      </div>
+<!--    <div class="q-pa-xl bg-negative q-mt-xl">-->
+<!--      <div class="container flex items-center justify-between">-->
+<!--        <p class="text-48 no-margin">keeper’s COLLABoration REQUEST</p>-->
+<!--        <div class="btn-dark" @click="$router.push('/request')">-->
+<!--          <p class="no-margin text-white text-32">MAKE REQUEST</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    </div>
     <div class="top ">
       <div class="container row q-col-gutter-md items-center">
 
@@ -135,7 +135,7 @@
     </div>
     <div class="bottom">
       <div class="container">
-        <p class="text-64 mb-100 text-white">D3VSMAP</p>
+        <p class="text-64 mb-100 text-white">D3adMAP</p>
         <div class="row q-col-gutter-md mb-200">
           <div class="col-12 col-md-3">
             <q-img src="~assets/yellow/1.png"/>
