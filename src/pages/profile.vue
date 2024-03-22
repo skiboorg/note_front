@@ -3,8 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
-     <p class="text-white text-32"> MY Profile</p>
+     <p class="text-white text-64"> MY Profile</p>
      <p class="text-white text-32 text-green-5">Used code: {{authStore.user.code}}</p>
+     <p class="text-white text-32 bg-dark q-px-md cursor-pointer" @click="$router.push('/claim')">d3adcoins: <span class="text-red-10">{{authStore.user.balance}}</span></p>
 
             <p class="text-white">my email</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
@@ -23,7 +24,8 @@
       <div class="row q-col-gutter-md q-mb-lg">
         <div class="col-12 col-md-3">  <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="update" label="Save"/> </div>
         <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="check" label="CHeck my wallet in wl"/></div>
-        <div class="col-12 col-md-3"><p class="no-margin btn-s bg-red" @click="authStore.logoutUser">LOG OUT</p></div>
+        <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="authStore.logoutUser" label="LOG OUT"/></div>
+
       </div>
       <p v-if="authStore.user.is_in_wl" class="text-positive text-32">d3adlisted</p>
       <p v-else class="text-red-13 text-32">YOUR WALLET IS NOT IN WL.</p>
@@ -34,8 +36,7 @@
       <p class="no-margin text-center text-24">There will be something interesting here... Or there won't be<br>
         33.33.33</p>
     </div>
-  <div class="bottom
-">
+  <div class="bottom">
     <p class="text-64 text-center text-negative">t0 b3 c0nt1nu3d...</p>
     <div class="text-center mb-100">
       <a href="https://twitter.com/btckeepers" target="_blank" class="q-mr-md"><img src="~assets/x.png" alt=""></a>

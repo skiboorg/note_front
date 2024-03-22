@@ -7,6 +7,7 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'login', component: () => import('pages/login.vue') },
       { path: 'profile', component: () => import('pages/profile.vue') },
+      { path: 'claim', component: () => import('pages/claim.vue') },
       // { path: 'request', component: () => import('pages/dao.vue') },
     ]
   },
