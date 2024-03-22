@@ -8,7 +8,8 @@
               <img src="~assets/yellow/logo.png" alt="">
             </div>
             <p class="no-margin text-32 gt-sm text-menu">3</p>
-            <p class="no-margin text-32 gt-sm text-menu cursor-pointer" @click="$router.push('/claim')">D3ADCOIN</p>
+            <p v-if="auth.user.email" class="no-margin text-32 gt-sm text-menu cursor-pointer" @click="$router.push('/claim')">D3ADCOIN</p>
+            <p v-else class="no-margin text-32 gt-sm text-menu cursor-pointer" @click="$router.push('/login')">D3ADCOIN</p>
             <p class="no-margin text-32 gt-sm text-menu">RAFFLES</p>
             <p class="no-margin text-32 gt-sm text-menu">3333</p>
 <!--            -->

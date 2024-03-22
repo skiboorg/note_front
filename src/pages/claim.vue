@@ -56,10 +56,13 @@ onUnmounted(()=>{
   <q-page  >
 <div style="padding-top: 0" class="pp">
   <div  v-if="isAuth" class="claim-container  flex column items-center justify-center ">
-    <p class="text-64 text-white">d3adcoin farm</p>
-    <p class="text-32 text-white">my d3adcoins: <span class="red-10">{{balance}}</span></p>
-    <q-img :ratio="4/3" fit="contain" src="~assets/coin.gif" class="q-mb-lg"/>
-    <q-btn  class="no-margin  full-width"  color="negative" text-color="dark" size="20px" :loading="loading"  @click="claim" label="claim"/>
+    <div class="claim">
+      <p class="text-64 text-white">d3adcoin farm</p>
+      <p class="text-32 text-white">my d3adcoins: <span class="red-10">{{balance}}</span></p>
+      <q-img :ratio="1" fit="contain" src="~assets/coin.gif" class="q-mb-lg"/>
+      <q-btn  class="no-margin  full-width"  color="negative" text-color="dark" size="20px" :loading="loading"  @click="claim" label="claim"/>
+    </div>
+
 
   </div>
   <div v-else class="claim-container  flex column items-center justify-center ">
