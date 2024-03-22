@@ -67,6 +67,7 @@ onUnmounted(()=>{
   </div>
   <div v-else class="claim-container  flex column items-center justify-center ">
     <p class="text-64 text-white">d3adcoin farm</p>
+    <p class="text-32 text-white cursor-pointer" @click="$router.push('/login')">sign in to claim</p>
   </div>
 </div>
 
