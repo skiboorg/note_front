@@ -23,7 +23,7 @@
       </div>
       <div class="row q-col-gutter-md q-mb-lg">
         <div class="col-12 col-md-3">  <q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="update" label="Save"/> </div>
-        <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="check" label="CHeck my wallet in wl"/></div>
+<!--        <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="check" label="CHeck my wallet in wl"/></div>-->
         <div class="col-12 col-md-4"><q-btn class="no-margin  full-width" color="negative" text-color="dark" size="20px" :loading="loading" @click="authStore.logoutUser" label="LOG OUT"/></div>
 
       </div>
