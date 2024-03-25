@@ -31,7 +31,7 @@ const claim = async (num) => {
       code.value = null
       $q.notify({
         type: 'negative',
-        message: 'Captcha error! After third error in a row you will relax for 33 s3conds.'
+        message: 'Captcha error! Try again. If there will be many errors - you will be temporarily block3d.'
       })
       await getCap()
     }else {
@@ -57,7 +57,7 @@ const startTimeOut = () => {
   interval.value = setTimeout( async ()=> {
     await getCap()
     modal.value = true
-  }, 33000);
+  }, 22000);
 }
 
 onUnmounted(()=>{
@@ -109,7 +109,7 @@ const reset = () => {
     </div>
     <q-dialog v-model="modal" persistent transition-show="scale" transition-hide="scale" @beforeHide="startTimeOut">
       <q-card class="ggg" style="width: 700px; max-width: 100vw;">
-        <div v-if="amount<=180">
+        <div v-if="amount<=250">
           <q-card-section v-if="user.can_claim">
             <p class="text-white text-64 text-center q-mb-none" >are you d3ad?</p>
             <p class="text-white text-24 text-center q-mb-none">Let's check if you're d3ad or a bot</p>
