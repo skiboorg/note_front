@@ -87,8 +87,8 @@ const reset = () => {
       <p class="text-32 text-white">my d3adcoins: <span class="text-red-10">{{balance}}</span></p>
       <p class="text-32 text-white">3arned d3adcoins: <span class="text-red-10">{{amount}}</span></p>
       <q-img :ratio="1" fit="contain" src="~assets/coin.gif" class="q-mb-lg"/>
-      <q-btn  class="q-mb-md  full-width"  color="negative" text-color="dark" size="20px"  :loading="loading"  @click="amount+=1" label="3arn"/>
-      <p class="text-24 text-white text-center">Progress updates every 22 seconds. To receive coins press Claim.</p>
+      <q-btn  class="q-mb-md  full-width"  color="negative" text-color="white" size="20px"  :loading="loading"  @click="amount+=1" label="3arn"/>
+      <p class="text-24 text-white text-center">Progress updates every 22 seconds. The limit at a time is 250, if you exceed it, your progress will be r3set. To receive coins press Claim.</p>
     </div>
 
 
@@ -118,7 +118,7 @@ const reset = () => {
             <p class="text-white  text-center">d3adcoins will not be claim3d if captcha solved incorrectly</p>
             <q-input  dark  bg-color="dark"  outlined square label-color="grey-8" standout="dark text-white"
                       class="q-mb-lg full-width  no-border-radius" color="text-white" v-model="code" label="solve captcha"/>
-            <q-btn  class="no-margin  full-width"  color="negative" :disable="!code" text-color="dark"
+            <q-btn  class="no-margin  full-width"  color="negative" :disable="!code" text-color="white"
                     size="20px" :loading="loading" @click="claim"  label="claim"/>
           </q-card-section>
           <q-card-section v-else>
@@ -130,7 +130,7 @@ const reset = () => {
         <div v-else>
           <q-card-section>
             <p class="text-white text-32 text-center ">Suspicious activity. Progress will be reset.</p>
-            <q-btn  class="no-margin  full-width"  color="negative"  text-color="dark" size="20px" :loading="loading" @click="reset"  label="..."/>
+            <q-btn  class="no-margin  full-width"  color="negative"  text-color="white" size="20px" :loading="loading" @click="reset"  label="..."/>
           </q-card-section>
         </div>
       </q-card>
