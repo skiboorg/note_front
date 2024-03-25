@@ -57,7 +57,7 @@ const startTimeOut = () => {
   interval.value = setTimeout( async ()=> {
     await getCap()
     modal.value = true
-  }, 5000);
+  }, 33000);
 }
 
 onUnmounted(()=>{
