@@ -31,9 +31,10 @@ const claim = async (num) => {
       code.value = null
       $q.notify({
         type: 'negative',
-        message: 'Captcha error! Try again. If there will be many errors - you will be temporarily block3d.'
+        message: 'Captcha error! Coins have been burn3d.'
       })
-      await getCap()
+      amount.value = 0
+      modal.value = false
     }else {
       $q.notify({
         type: 'positive',
