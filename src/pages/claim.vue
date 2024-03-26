@@ -50,7 +50,7 @@ const claim = async (num) => {
 
 
 onMounted(()=>{
-  startTimeOut()
+  //startTimeOut()
 })
 
 const startTimeOut = () => {
