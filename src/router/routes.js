@@ -8,6 +8,7 @@ const routes = [
       { path: 'login', component: () => import('pages/login.vue') },
       { path: 'profile', component: () => import('pages/profile.vue') },
       { path: 'claim', component: () => import('pages/claim.vue') },
+      { path: 'earn', component: () => import('pages/claim.vue') },
       // { path: 'request', component: () => import('pages/dao.vue') },
     ]
   },

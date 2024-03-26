@@ -5,7 +5,7 @@
         <div class="col-12 col-md-6">
      <p class="text-white text-64"> MY Profile</p>
      <p class="text-white text-32 text-green-5">Used code: {{authStore.user.code}}</p>
-     <p class="text-white text-32 bg-dark q-px-md cursor-pointer" @click="$router.push('/claim')">d3adcoins: <span class="text-red-10">{{authStore.user.balance}}</span></p>
+     <p class="text-white text-32 bg-dark q-px-md cursor-pointer" @click="$router.push('/earn')">d3adcoins: <span class="text-red-10">{{authStore.user.balance}}</span></p>
 
             <p class="text-white">my email</p>
             <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
