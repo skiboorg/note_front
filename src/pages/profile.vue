@@ -7,7 +7,34 @@
       <!--        </div>-->
     </div>
   </div>
-  <div class="pp padded ">
+  <div class="q-pa-xl q-mt-lg bg-negative">
+    <div class="container">
+      <div class="row q-col-gutter-md items-end q-mb-md">
+        <div class="col-12 col-md-4">
+          <p class="text-white">transfer d3adcoins to uid</p>
+          <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
+
+                   class="full-width  no-border-radius" color="text-white" v-model="toUser" placeholder="333gtg-yyyrte"/>
+
+        </div>
+        <div class="col-12 col-md-4">
+          <p class="text-white">amount</p>
+          <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
+                   class="full-width  no-border-radius" color="text-white" v-model="amount" placeholder="333"/>
+        </div>
+        <div class="col-12 col-md-4">
+          <p class="text-white">tx fee is 30 d3adcoins</p>
+          <q-btn style="position: relative;top: -2px" class="no-margin  full-width" square unelevated color="dark"
+                 text-color="white" size="20px" :loading="loading" :disable="!toUser || !amount" @click="send" label="s3nd"/>
+
+        </div>
+      </div>
+      <router-link class="text-dark" to="/d3adchain">your tx history</router-link>
+    </div>
+
+
+  </div>
+  <div style="padding-top: 50px" class="pp  ">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
@@ -50,31 +77,7 @@
     </div>
 
   </div>
-    <div class="q-pa-xl bg-negative">
-      <div class="container">
-        <div class="row q-col-gutter-md items-end">
-          <div class="col-12 col-md-4">
-            <p class="text-white">transfer d3adcoins to uid</p>
-            <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
 
-                     class="full-width  no-border-radius" color="text-white" v-model="toUser" placeholder="333gtg-yyyrte"/>
-          </div>
-          <div class="col-12 col-md-4">
-            <p class="text-white">amount</p>
-            <q-input dark  bg-color="dark" outlined square label-color="grey-8" standout="dark text-white"
-                     class="full-width  no-border-radius" color="text-white" v-model="amount" placeholder="333"/>
-          </div>
-          <div class="col-12 col-md-4">
-            <p class="text-white">commission fee is 30 d3adcoins</p>
-            <q-btn style="position: relative;top: -2px" class="no-margin  full-width" square unelevated color="dark"
-                   text-color="white" size="20px" :loading="loading" :disable="!toUser || !amount" @click="send" label="s3nd"/>
-
-          </div>
-        </div>
-      </div>
-
-
-    </div>
   <div class="bottom">
     <p class="text-64 text-center text-negative">t0 b3 c0nt1nu3d...</p>
     <div class="text-center mb-100">
