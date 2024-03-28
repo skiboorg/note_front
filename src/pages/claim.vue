@@ -51,7 +51,7 @@ const claim = async (num) => {
 
 
 onMounted(()=>{
-  startTimeOut()
+  //startTimeOut()
 })
 
 const startTimeOut = () => {
@@ -88,7 +88,7 @@ const reset = () => {
       <p class="text-32 text-white">my d3adcoins: <span class="text-red-10">{{balance}}</span></p>
       <p class="text-32 text-white">3arned d3adcoins: <span class="text-red-10">{{amount}}</span></p>
       <q-img :ratio="1" fit="contain" src="~assets/coin.gif" class="q-mb-lg"/>
-      <q-btn  class="q-mb-md  full-width"  color="negative" text-color="white" size="20px"  :loading="loading"  @click="amount+=1" label="3arn"/>
+      <q-btn disable class="q-mb-md  full-width"  color="grey-9" text-color="white" size="20px"  :loading="loading"  @click="amount+=1" label="3arn"/>
       <p class="text-24 text-white text-center">Progress updates every 22 seconds. To receive coins press Claim.</p>
     </div>
 

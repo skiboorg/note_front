@@ -10,8 +10,9 @@
             <p class="no-margin text-32 gt-sm text-menu">3</p>
             <p v-if="auth.user.email" class="no-margin text-32 gt-sm text-menu cursor-pointer" @click="$router.push('/earn')">D3ADCOIN</p>
             <p v-else class="no-margin text-32 gt-sm text-menu cursor-pointer" @click="$router.push('/login')">D3ADCOIN</p>
-            <p class="no-margin text-32 gt-sm text-menu">RAFFLES</p>
-            <p class="no-margin text-32 gt-sm text-menu">3333</p>
+<!--            @click="$router.push('/raffles')"-->
+            <p class="no-margin text-32 gt-sm text-menu" >RAFFLES</p>
+            <p class="no-margin text-32 gt-sm text-menu" @click="$router.push('/d3adchain')">d3adchain</p>
 <!--            -->
 
             <q-btn v-if="!auth.user.email" no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn gt-sm" @click="$router.push('/login')" label="Sign in/Sign up"/>

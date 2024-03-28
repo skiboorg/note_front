@@ -9,7 +9,9 @@ const routes = [
       { path: 'profile', component: () => import('pages/profile.vue') },
       { path: 'claim', component: () => import('pages/claim.vue') },
       { path: 'earn', component: () => import('pages/claim.vue') },
-      // { path: 'request', component: () => import('pages/dao.vue') },
+      { path: 'raffles', component: () => import('pages/raffles.vue') },
+      { path: 'raffles/:id', component: () => import('pages/raffle.vue') },
+      { path: 'd3adchain', component: () => import('pages/history.vue') },
     ]
   },
 

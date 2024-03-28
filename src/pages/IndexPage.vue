@@ -1,14 +1,13 @@
 <template>
   <q-page >
-
-<!--    <div class="q-pa-xl bg-negative q-mt-xl">-->
-<!--      <div class="container flex items-center justify-between">-->
-<!--        <p class="text-48 no-margin">keeper’s COLLABoration REQUEST</p>-->
+    <div v-if="user?.email && (!user.wallet || !user.twitter)" class="q-pa-xl bg-negative q-mt-xl">
+      <div class="container flex items-center justify-between">
+        <p class="text-32 no-margin">Your profile is not ready! Make sure you've filled out all the fields.</p>
 <!--        <div class="btn-dark" @click="$router.push('/request')">-->
 <!--          <p class="no-margin text-white text-32">MAKE REQUEST</p>-->
 <!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+      </div>
+    </div>
 
     <div class="top ">
       <div class="container row q-col-gutter-md items-center">
@@ -165,6 +164,7 @@
 <script setup>
 import {onBeforeMount, ref} from "vue";
 import {api} from "boot/axios";
+import {useAuthStore} from "stores/auth";
 
 const code = ref(null)
 const text = ref(null)
@@ -183,6 +183,8 @@ const note = ref({})
 onBeforeMount(()=>{
   makeid()
 })
+
+const {user} = useAuthStore()
 
 const test = async () => {
   loginWithRedirect();
