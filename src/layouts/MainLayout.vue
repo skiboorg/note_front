@@ -34,8 +34,8 @@
           <p class="text-32 text-white text-center">3</p>
           <p v-if="auth.user.email" class="text-32 text-white text-center" @click="$router.push('/earn')">D3ADCOIN</p>
           <p v-else class="text-32 text-white text-center" @click="$router.push('/login')">D3ADCOIN</p>
-
-          <p class="text-32 text-white text-center">3333</p>
+          <p class=" text-32  text-white" >RAFFLES</p>
+          <p class=" text-32  text-white" @click="$router.push('/d3adchain')">d3adchain</p>
 <!--          @click="$router.push('/auth')"-->
 
           <q-btn v-if="!auth.user.email" no-caps unelevated color="negative" text-color="black" size="20px" class="no-border-radius btn " @click="$router.push('/login')" label="Sign in/Sign up"/>
